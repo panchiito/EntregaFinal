@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'Login/assets/ico/favicon.png">
+
+    <title> . Entrega Final Coderhouse D'Aloia . </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'Login/assets/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'Login/assets/css/main.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'Login/assets/css/font-awesome.min.css' %}">
+
+    <script src="{% static 'Login/assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'Login/assets/js/modernizr.custom.js' %}"></script>
+	
+
+	
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+		
+	<!-- Menu que aparece desde la derecha -->
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a> Entrega Final</a></h1>
+            {% if request.user.is_authenticated %}
+            <p class="text-muted small mb-4 mb-1g-0"> Hola, {{user.username}}</p>
+            {% endif %}
+			<i class="icon-remove menu-close"></i>
+			<a href="{% url 'Index' %}" class="smoothScroll">Index</a>
+			<a href="{% url 'SobreMi' %}" class="smoothScroll">Sobre mi</a>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'List' %}" class="smoothScroll">Poemas</a>
+			<a href="{% url 'LeerPublicaciones' %}" class="smoothScroll">Edit/Delete List</a>
+            <a href="{% url 'lista_mensajes' %}" class="smoothScroll">Buzon de Mensajes</a>
+            <a href="{% url 'lista_usuarios' %}" class="smoothScroll">Escribir nuevo mensaje</a>
+            {% endif %}
+			<a href="{% url 'contact' %}" class="smoothScroll">Contactame</a>
+            {% if not request.user.is_authenticated %}
+            <a href="{% url 'Login' %}" class="smoothScroll">Login</a>
+            <a href="{% url 'List' %}" class="smoothScroll">Publicaciones</a>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'Logout' %}" class="smoothScroll">Logout</a>
+            {% endif %}
+			<a href="https://www.linkedin.com/in/francisco-d-aloia-7477ab26a/"><i class="icon-linkedin"></i></a>
+			<a href="panchiito@hotmail.com"><i class="icon-envelope"></i></a>
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="icon-reorder"></i></div>
+	</nav>
+
+
+	
+	<!-- ========== HEADER SECTION ========== -->
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+		<div class="container">
+			<div class="logo">
+				<img src="{% static 'Login/assets/img/logo.png' %}">
+			</div>
+			<br>
+			<div class="row">
+				<h1>Entrega Final</h1>
+				<br>
+				<h3> Francisco Bruno D'Aloia </h3>
+                <h2> Segundo proyecto en Django </h2>
+				<br>
+				<br>
+				<div class="col-lg-6 col-lg-offset-3">
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /headerwrap -->
+	
+
+
+    {% block contenidoQueCambia %}
+
+    {% endblock %}
+
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="{% static 'Login/assets/js/classie.js' %}"></script>
+    <script src="{% static 'Login/assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'Login/assets/js/smoothscroll.js' %}"></script>
+	<script src="{% static 'Login/assets/js/main.js' %}"></script>
+</body>
+</html>

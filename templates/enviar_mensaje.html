@@ -1,0 +1,22 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enviar mensaje</title>
+</head>
+<body>
+    <h1>Enviar mensaje a {{ receptor.username }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar" />
+    </form>
+</body>
+</html>
+
+{% endblock %}

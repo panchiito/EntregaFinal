@@ -1,0 +1,60 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+	<!-- ========== SECCION 1 ========== -->
+	<section id="about" name="about"></section>
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<h3>Sobre mi</h3>
+				<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+				
+				<!-- INTRO INFORMATIO-->
+				<div class="col-lg-6 col-lg-offset-3">
+					<p> Argentino, 32 años, padre de una princesa que actualmente tiene 4 años. Viviendo en Pinamar y con toda la intención de hacer un cambio importante en torno a lo laboral. Mi meta es conseguir algun trabajo relacionado a la informática/programación o relacionados. Tengo un excelente nivel de ingles y me desenvuelvo con facilidad en todo lo digital asi que tengo fé que va a ser posible.</p>
+				</div>								
+			</div>
+		</div><!-- /container -->
+	</div><!-- /f -->
+	<!-- ========== SECCION 2 "CAROUSEL" ========== -->	
+	<section id="fotos" name="fotos"></section>
+	<div id="f">
+		<div class="container">
+			<div class="row centered">
+				<h3>SECTOR 2</h3>
+				<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+				
+				<div class="col-lg-6 col-lg-offset-3">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+							<div class="item active centered">
+								<img class="img-responsive" src="{% static 'Login/assets/img/foto4.jpg' %}" alt="">
+							</div>
+							<div class="item centered">
+								<img class="img-responsive" src="{% static 'Login/assets/img/foto2.jpg' %}" alt="">
+							</div>
+							<div class="item centered">
+								<img class="img-responsive" src="{% static 'Login/assets/img/foto3.jpg' %}" alt="">
+							</div>
+						</div>
+						<br>
+						<br>
+						<ol class="carousel-indicators">
+						    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>
+					</div>
+				</div><!-- col-lg-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div>	<!-- f -->
+
+
+
+
+{% endblock %}

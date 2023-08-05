@@ -1,0 +1,39 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicacion detalle </title>
+</head>
+<body>
+
+    <h3> <i> {{ publicacion.titulo }}</i></h3>
+    <p> <i> {{ publicacion.subtitulo }}</i></p>
+    <h4>  <i> {{ publicacion.autor }}</i></h4>
+    <p> <i> {{ publicacion.cuerpo }}</i></p>
+    <p> Fecha: <i> {{ publicacion.fecha }}</i></p>
+    {% if publicacion.imagen %}
+    <img src="{{ publicacion.imagen.url }}" alt="Imagen de la publicacion" height="350">
+    {% else %}
+    <p>No hay imagen disponible</p>
+    {% endif %}
+    <p> 
+        <a href="{% url 'List' %}"> Regresar </a>
+    </p>
+
+</body>
+</html>
+
+
+
+{% endblock %}

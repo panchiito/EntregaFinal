@@ -1,0 +1,46 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+
+
+{% if miFormulario.errors %}
+
+<p style="color: red;"> Están mal los datos, revisar.</p>
+
+{% endif %}
+
+
+
+	
+	<!-- ========== SECCION 1 ========== -->
+	<section id="about" name="about"></section>
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<h3>Formulario Publicacion</h3>
+				<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+				
+				<!-- INTRO INFORMATIO-->
+				<div class="col-lg-6 col-lg-offset-3">
+					<form enctype="multipart/form-data" method="POST"> {% csrf_token %}
+
+                        <table>
+                    
+                            {{ miFormulario.as_table }}
+                    
+                        </table>
+                    
+                        <input type="submit", valuei="Enviar">
+                    
+                    </form>
+				</div>								
+			</div>
+		</div><!-- /container -->
+	</div><!-- /f -->
+
+
+{% endblock %}

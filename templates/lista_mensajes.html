@@ -1,0 +1,39 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de mensajes</title>
+</head>
+<body>
+    <h1>Mensajes recibidos</h1>
+    <ul>
+        {% for mensaje in mensajes_recibidos %}
+            <li>
+                De: {{ mensaje.emisor.username }}
+                Asunto: {{ mensaje.asunto }}
+                Contenido: {{mensaje.contenido }}
+                <a href="{% url 'enviar_mensaje' receptor_id=mensaje.emisor.id %}">Responder</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>Mensajes enviados</h1>
+    <ul>
+        {% for mensaje in mensajes_enviados %}
+            <li>
+                Para: {{ mensaje.receptor.username }}
+
+                Asunto: {{ mensaje.asunto }}
+
+                Contenido: {{mensaje.contenido }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+{% endblock %}

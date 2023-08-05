@@ -1,0 +1,29 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de usuarios</title>
+</head>
+<body>
+    <h1>Lista de usuarios</h1>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>
+                {{ usuario.username }}
+                <a href="{% url 'enviar_mensaje' receptor_id=usuario.id %}">Enviar mensaje</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+    
+</body>
+</html>
+
+{% endblock %}
